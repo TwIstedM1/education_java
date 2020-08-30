@@ -10,7 +10,7 @@ public class Main {
     	myLL.addLast("2");
 
 		System.out.println(myLL.size());
-		System.out.println(myLL.getFirst());
+		System.out.println(myLL.element());
 		myLL.removeFirst();
 		System.out.println(myLL.getFirst());
 

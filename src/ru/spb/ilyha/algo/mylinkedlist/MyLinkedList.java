@@ -5,15 +5,15 @@ import java.util.Deque;
 import java.util.Iterator;
 import java.util.List;
 
-public class MyLinkedList<E> implements Deque {
+public class MyLinkedList<E> implements Deque<E> {
     int size = 0;
-    Pointers<Object> first;
-    Pointers<Object> last;
+    Pointers<E> first;
+    Pointers<E> last;
 
     @Override
-    public void addFirst(Object e) {
-        Pointers<Object> f = first;
-        Pointers<Object> newPointers = new Pointers<>(e, f, null);
+    public void addFirst(E e) {
+        Pointers<E> f = first;
+        Pointers<E> newPointers = new Pointers<>(e, f, null);
         first = newPointers;
         if (f == null){ last = newPointers;}
         else {f.previous = newPointers;}
@@ -21,9 +21,9 @@ public class MyLinkedList<E> implements Deque {
     }
 
     @Override
-    public void addLast(Object e) {
-        Pointers<Object> l = last;
-        Pointers<Object> newPointers = new Pointers<>(e, null, last);
+    public void addLast(E e) {
+        Pointers<E> l = last;
+        Pointers<E> newPointers = new Pointers<>(e, null, last);
         last = newPointers;
         if (l == null){ first = newPointers;}
         else {l.next = newPointers;}
@@ -31,105 +31,52 @@ public class MyLinkedList<E> implements Deque {
     }
 
     @Override
-    public boolean offerFirst(Object o) {
+    public boolean offerFirst(E e) {
         return false;
     }
 
     @Override
-    public boolean offerLast(Object o) {
+    public boolean offerLast(E e) {
         return false;
     }
 
     @Override
-    public Object removeFirst() {
-        first.previous = null;
-        first.next = null;
-        return first;
-    }
-
-    @Override
-    public Object removeLast() {
+    public E removeFirst() {
         return null;
     }
 
     @Override
-    public Object pollFirst() {
+    public E removeLast() {
         return null;
     }
 
     @Override
-    public Object pollLast() {
+    public E pollFirst() {
         return null;
     }
 
     @Override
-    public int size() {
-        return size;
-    }
-
-
-    @Override
-    public boolean retainAll(Collection c) {
-        return false;
-    }
-
-    @Override
-    public boolean removeAll(Collection c) {
-        return false;
-    }
-
-    @Override
-    public boolean containsAll(Collection c) {
-        return false;
-    }
-
-    @Override
-    public boolean contains(Object o) {
-        return false;
-    }
-
-    public Object getFirst() { return first.element; }
-
-    public void setFirst(Pointers<Object> first) { this.first = first; }
-
-    public Object getLast() {
-        return last.element;
-    }
-
-    public void setLast(Pointers<Object> last) { this.last = last; }
-
-    @Override
-    public boolean isEmpty() {
-        return false;
-    }
-
-    @Override
-    public Iterator iterator() {
+    public E pollLast() {
         return null;
     }
 
     @Override
-    public Object[] toArray() {
-        return new Object[0];
+    public E getFirst() {
+        return (E)first;
     }
 
     @Override
-    public Object[] toArray(Object[] a) {
-        return new Object[0];
+    public E getLast() {
+        return (E)last;
     }
 
     @Override
-    public Iterator descendingIterator() {
+    public E peekFirst() {
         return null;
     }
 
     @Override
-    public Object peekFirst() {
-        return null;
-    }
-
-    @Override
-    public Object peekLast() {
+    public E peekLast() {
         return null;
     }
 
@@ -144,42 +91,42 @@ public class MyLinkedList<E> implements Deque {
     }
 
     @Override
-    public boolean add(Object o) {
+    public boolean add(E e) {
         return false;
     }
 
     @Override
-    public boolean offer(Object o) {
+    public boolean offer(E e) {
         return false;
     }
 
     @Override
-    public Object remove() {
+    public E remove() {
         return null;
     }
 
     @Override
-    public Object poll() {
+    public E poll() {
         return null;
     }
 
     @Override
-    public Object element() {
+    public E element() {
+        return ;
+    }
+
+    @Override
+    public E peek() {
         return null;
     }
 
     @Override
-    public Object peek() {
-        return null;
-    }
-
-    @Override
-    public void push(Object o) {
+    public void push(E e) {
 
     }
 
     @Override
-    public Object pop() {
+    public E pop() {
         return null;
     }
 
@@ -189,13 +136,63 @@ public class MyLinkedList<E> implements Deque {
     }
 
     @Override
-    public boolean addAll(Collection c) {
+    public boolean containsAll(Collection<?> c) {
+        return false;
+    }
+
+    @Override
+    public boolean addAll(Collection<? extends E> c) {
+        return false;
+    }
+
+    @Override
+    public boolean removeAll(Collection<?> c) {
+        return false;
+    }
+
+    @Override
+    public boolean retainAll(Collection<?> c) {
         return false;
     }
 
     @Override
     public void clear() {
 
+    }
+
+    @Override
+    public boolean contains(Object o) {
+        return false;
+    }
+
+    @Override
+    public int size() {
+        return size;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return false;
+    }
+
+    @Override
+    public Iterator<E> iterator() {
+        return null;
+    }
+
+    @Override
+    public Object[] toArray() {
+        return new Object[0];
+    }
+
+    @Override
+    public <T> T[] toArray(T[] a) {
+        return null;
+    }
+
+    @Override
+    public Iterator<E> descendingIterator() {
+        return null;
     }
 
 }
