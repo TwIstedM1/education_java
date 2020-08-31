@@ -1,9 +1,6 @@
 package ru.spb.ilyha.algo.mylinkedlist;
 
-import java.util.Collection;
-import java.util.Deque;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class MyLinkedList<E> implements Deque<E> {
     int size = 0;
@@ -32,12 +29,14 @@ public class MyLinkedList<E> implements Deque<E> {
 
     @Override
     public boolean offerFirst(E e) {
-        return false;
+        addFirst(e);
+        return true;
     }
 
     @Override
     public boolean offerLast(E e) {
-        return false;
+        addFirst(e);
+        return true;
     }
 
     @Override
@@ -59,7 +58,7 @@ public class MyLinkedList<E> implements Deque<E> {
     public E pollLast() {
         return null;
     }
-
+    
     @Override
     public E getFirst() {
         return (E)first;
@@ -72,12 +71,12 @@ public class MyLinkedList<E> implements Deque<E> {
 
     @Override
     public E peekFirst() {
-        return null;
+        return (E)first;
     }
 
     @Override
     public E peekLast() {
-        return null;
+        return (E)last;
     }
 
     @Override
@@ -97,7 +96,8 @@ public class MyLinkedList<E> implements Deque<E> {
 
     @Override
     public boolean offer(E e) {
-        return false;
+        add(e);
+        return true;
     }
 
     @Override
@@ -112,7 +112,7 @@ public class MyLinkedList<E> implements Deque<E> {
 
     @Override
     public E element() {
-        return ;
+        return null;
     }
 
     @Override
