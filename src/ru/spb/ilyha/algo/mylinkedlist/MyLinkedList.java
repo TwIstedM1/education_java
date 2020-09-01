@@ -20,7 +20,7 @@ public class MyLinkedList<E> implements Deque<E> {
     @Override
     public void addLast(E e) {
         Pointers<E> l = last;
-        Pointers<E> newPointers = new Pointers<>(e, null, last);
+        Pointers<E> newPointers = new Pointers<>(e, null, L);
         last = newPointers;
         if (l == null){ first = newPointers;}
         else {l.next = newPointers;}
@@ -174,7 +174,7 @@ public class MyLinkedList<E> implements Deque<E> {
     public boolean isEmpty() { return first == null || last == null; }
 
     @Override
-    public Iterator<E> iterator() {
+    public Iterator<E> iterator() {//добавить методы нект и хезнекст
         return null;
     }
 
