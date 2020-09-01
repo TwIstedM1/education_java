@@ -20,7 +20,7 @@ public class MyLinkedList<E> implements Deque<E> {
     @Override
     public void addLast(E e) {
         Pointers<E> l = last;
-        Pointers<E> newPointers = new Pointers<>(e, null, L);
+        Pointers<E> newPointers = new Pointers<>(e, null, l);
         last = newPointers;
         if (l == null){ first = newPointers;}
         else {l.next = newPointers;}
