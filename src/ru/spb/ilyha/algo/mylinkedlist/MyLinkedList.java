@@ -171,9 +171,7 @@ public class MyLinkedList<E> implements Deque<E> {
     }
 
     @Override
-    public boolean isEmpty() {
-        return false;
-    }
+    public boolean isEmpty() { return first == null || last == null; }
 
     @Override
     public Iterator<E> iterator() {
